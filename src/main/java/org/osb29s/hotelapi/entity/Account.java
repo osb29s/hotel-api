@@ -24,8 +24,8 @@ import lombok.ToString;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "accounts", uniqueConstraints = {
-      @UniqueConstraint(name = "accounts_phone_uk", columnNames = "phone_number")
-    })
+    @UniqueConstraint(name = "accounts_phone_uk", columnNames = "phone_number")
+})
 public class Account {
 
   @Id
