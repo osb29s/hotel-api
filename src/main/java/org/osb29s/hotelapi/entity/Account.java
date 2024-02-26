@@ -15,7 +15,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.NaturalId;
 
+/**
+ * General entity, which describes any user of the system.
+ * Uses phone number as a natural id.
+ * In future may store another info, like statistics password, etc.
+ */
 @Getter
 @Setter
 @ToString
@@ -29,19 +35,19 @@ import lombok.ToString;
 public class Account {
 
   @Id
-  private Long id;
+  protected Long id;
 
   @Column(nullable = false)
+  @NaturalId
   @Pattern(regexp = "\\+(\\d{1,2}) \\(\\d{3}\\)-\\d{3}-\\d{4}",
       message = "Wrong phone number format")
-  String phoneNumber;
+  protected String phoneNumber;
 
   @Column(nullable = false)
   @Size(min = 3, max = 128, message = "Full name should be between 3 and 128 characters")
-  String fullName;
+  protected String fullName;
 
-  LocalDateTime createdAt = LocalDateTime.now();
-  LocalDateTime lastUpdatedAt = LocalDateTime.now();
-  // TODO: LDT createdBy, lastUpdatedBy, which are FKs for managers who created/updated account
+  protected LocalDateTime createdAt = LocalDateTime.now();
+  protected LocalDateTime lastUpdatedAt = LocalDateTime.now();
 
 }
