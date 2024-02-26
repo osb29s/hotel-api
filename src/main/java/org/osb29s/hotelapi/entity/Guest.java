@@ -36,6 +36,10 @@ public class Guest extends Account {
   @JoinColumn(name = "group_id")
   private GuestGroup group;
 
+  public Guest(GuestGroup group) {
+    this.group = group;
+  }
+
   @Builder
   public Guest(Long id, String phoneNumber, String fullName, LocalDateTime createdAt,
       LocalDateTime lastUpdatedAt, GuestGroup group) {
