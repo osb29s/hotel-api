@@ -1,15 +1,5 @@
 package org.osb29s.hotelapi.entity;
 
-<<<<<<< HEAD
-import lombok.Data;
-
-@Data
-public class Account {
-  private Long id;
-  private String phoneNumber;
-  private String fullName;
-
-=======
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -87,9 +77,6 @@ public class Booking {
   @NotNull(message = "Check-out time must be specified")
   @Column(nullable = false)
   private LocalDateTime checkOutTime;
-
-
   private String description;
->>>>>>> origin/main
 
 }
