@@ -77,8 +77,6 @@ public class Booking {
   @NotNull(message = "Check-out time must be specified")
   @Column(nullable = false)
   private LocalDateTime checkOutTime;
-
-
   private String description;
 
 }
